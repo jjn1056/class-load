@@ -59,7 +59,7 @@ sub load_class {
     my $options = shift;
 
     my ($res, $e) = try_load_class($class, $options);
-    return 1 if $res;
+    return $class if $res;
 
     _croak($e);
 }
